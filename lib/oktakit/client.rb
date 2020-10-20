@@ -2,6 +2,7 @@ require 'sawyer'
 require 'oktakit/response/raise_error'
 require 'oktakit/client/admin_roles'
 require 'oktakit/client/apps'
+require 'oktakit/client/authorization_servers'
 require 'oktakit/client/events'
 require 'oktakit/client/factors'
 require 'oktakit/client/groups'
@@ -14,6 +15,7 @@ module Oktakit
   class Client
     include AdminRoles
     include Apps
+    include AuthorizationServers
     include Events
     include Factors
     include Groups
@@ -176,7 +178,6 @@ module Oktakit
 
       uri = URI::DEFAULT_PARSER.escape("/api/v1" + path.to_s)
       @last_response = resp = sawyer_agent.call(method, uri, data, options)
-
       response = [resp.data, resp.status]
       response << absolute_to_relative_url(resp.rels[:next]) if paginate
       response
