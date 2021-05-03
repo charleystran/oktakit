@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Oktakit::Client::AuthorizationServers do
-  AUTH_SERVER_ID = 'aus1bptuzqo48Ut942p7'
-  POLICY_ID = '00p8ugd7c2vILTBa62p7'
+  AUTH_SERVER_ID = 'ausjdlk48Ut942p7'
+  POLICY_ID = '00p8uglskjdflkLTBa62p7'
 
   describe '#list_authorization_servers' do
     it 'returns fetched application servers' do
